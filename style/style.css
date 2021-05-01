@@ -2,4 +2,79 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  color: #fff;
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+body#bg-img {
+  background: url(../images/background.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+}
+body#bg-img:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-size: rgba(68, 68, 68, 0.9);
+  z-index: -1;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 400;
+}
+h1.bigHeading, h2.bigHeading, h3.bigHeading {
+  font-size: 6rem;
+}
+h1.smallHeading, h2.smallHeading, h3.smallHeading {
+  margin-bottom: 2rem;
+  padding: 0.2rem 1rem;
+  background: rgba(73, 73, 73, 0.5);
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  list-style: none;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.secondaryText {
+  color: #eece1a;
+}
+
+main {
+  padding: 4rem;
+  height: 100%;
+}
+main .icons {
+  margin-top: 1rem;
+}
+main .icons a {
+  padding: 0.4rem;
+}
+main .icons a:hover {
+  color: #eece1a;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+main#home {
+  overflow: hidden;
+}
+main#home h1 {
+  margin-top: 20vh;
 }/*# sourceMappingURL=style.css.map */
