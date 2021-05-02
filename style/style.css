@@ -1,3 +1,51 @@
+.menuBtn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  cursor: pointer;
+}
+.menuBtn .btnLine {
+  width: 28px;
+  height: 3px;
+  margin: 0 0 5px 0;
+  background: #fff;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+.menuBtn.close {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+.menuBtn.close .btnLine:nth-child(1) {
+  transform: rotate(45deg) translate(5px);
+  -webkit-transform: rotate(45deg) translate(5px);
+  -moz-transform: rotate(45deg) translate(5px);
+  -ms-transform: rotate(45deg) translate(5px);
+  -o-transform: rotate(45deg) translate(5px);
+}
+.menuBtn.close .btnLine:nth-child(2) {
+  opacity: 0;
+}
+.menuBtn.close .btnLine:nth-child(3) {
+  transform: rotate(-45deg) translate(11px, -6px);
+  -webkit-transform: rotate(-45deg) translate(11px, -6px);
+  -moz-transform: rotate(-45deg) translate(11px, -6px);
+  -ms-transform: rotate(-45deg) translate(11px, -6px);
+  -o-transform: rotate(-45deg) translate(11px, -6px);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,9 +53,12 @@
 }
 
 body {
+  background: #444;
   color: #fff;
   height: 100%;
+  margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
 }
 body#bg-img {
   background: url(../images/background.jpg);
@@ -21,7 +72,8 @@ body#bg-img:after {
   right: 0;
   width: 100%;
   height: 100%;
-  background-size: rgba(68, 68, 68, 0.9);
+  background: rgba(68, 68, 68, 0.7);
+  background-size: cover;
   z-index: -1;
 }
 
