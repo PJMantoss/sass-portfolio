@@ -8,10 +8,13 @@
 }
 
 body {
-    @include background();
-    color: #fff;
+    @include background;
+    background: $primaryColor;
+    color: set-text-color($primaryColor);
     height: 100%;
+    margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
 }
 
 // Headings
