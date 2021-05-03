@@ -25,7 +25,7 @@
         .btnLine{
             // bar 1 - rotate
             &:nth-child(1){
-                transform: rotate(45deg) translate(5px);
+                transform: rotate(45deg) translate(5px, 5px);
                 -webkit-transform: rotate(45deg) translate(5px);
                 -moz-transform: rotate(45deg) translate(5px);
                 -ms-transform: rotate(45deg) translate(5px);
@@ -37,7 +37,7 @@
             }
             // bar 3 - rotate
             &:nth-child(3){
-                transform: rotate(-45deg) translate(11px, -6px);
+                transform: rotate(-45deg) translate(7px, -6px);
                 -webkit-transform: rotate(-45deg) translate(11px, -6px);
                 -moz-transform: rotate(-45deg) translate(11px, -6px);
                 -ms-transform: rotate(-45deg) translate(11px, -6px);
