@@ -87,5 +87,16 @@ main {
        'job1 job2 job3';
     grid-template-columns: repeat(3, 1fr);
 
+    .bioImage{
+        grid-area: bioimage;
+        margin: auto;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        border: 3px solid $secondaryColor;
+    }
+
     
 }
