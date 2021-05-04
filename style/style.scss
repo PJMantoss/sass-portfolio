@@ -115,3 +115,17 @@ main {
         grid-area: job3;
     }
 }
+
+// Projects
+.projects{
+    display: grid;
+    grid-gap: 0.7rem;
+    grid-template-columns: repeat(3, 1fr);
+
+    img{
+        width: 100%;
+        border: 3px solid #fff;
+
+       
+    }
+}
