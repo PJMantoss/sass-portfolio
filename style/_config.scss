@@ -49,3 +49,9 @@ $bgOpacity : 0.7;
         @content;
     }
 }
+
+@mixin medium{
+    @media screen and (max-width: 768px){
+        @content;
+    }
+}
