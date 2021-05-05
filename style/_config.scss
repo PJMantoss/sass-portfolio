@@ -42,3 +42,10 @@ $bgOpacity : 0.7;
         @return #fff;
     }
 }
+
+// Media Queries
+@mixin small{
+    @media screen and (max-width: 500px){
+        @content;
+    }
+}
