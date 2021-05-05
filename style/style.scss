@@ -149,6 +149,14 @@ main {
         margin-bottom: 3rem;
         @include easeOut;
 
-        
+        &:hover{
+            padding: 0.5rem 1.5rem;
+            background: $secondaryColor;
+            color: set-text-color($secondaryColor);
+            
+            span{
+                color: set-text-color($secondaryColor);
+            }
+        }
     }
 }
