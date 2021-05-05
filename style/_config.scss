@@ -61,3 +61,9 @@ $bgOpacity : 0.7;
         @content;
     }
 }
+
+@mixin xlarge{
+    @media screen and (min-width: 1171px){
+        @content;
+    }
+}
