@@ -55,3 +55,9 @@ $bgOpacity : 0.7;
         @content;
     }
 }
+
+@mixin large{
+    @media screen and (min-width: 769px) and (max-width: 1170px){
+        @content;
+    }
+}
