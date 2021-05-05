@@ -185,3 +185,11 @@ main {
     background: lighten($primaryColor, 50);
     color: #333;
 }
+
+#mainFooter{
+    text-align: center;
+    padding: 1rem;
+    background: darken($primaryColor, 10);
+    color: set-text-color($primaryColor);
+    height: 60px;
+}
