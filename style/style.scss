@@ -173,3 +173,9 @@ main {
         color: set-text-color($secondaryColor);
     }
 }
+
+.btn-dark{
+    @extend .btn;
+    background: darken($primaryColor, 50);
+    color: #fff;
+}
