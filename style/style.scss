@@ -160,3 +160,16 @@ main {
         }
     }
 }
+
+// Button
+.btn{
+    display: block;
+    padding: 0.5rem 1rem;
+    border: 0;
+    margin-bottom: 0.3rem;
+    
+    &:hover{
+        background: $secondaryColor;
+        color: set-text-color($secondaryColor);
+    }
+}
