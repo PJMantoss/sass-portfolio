@@ -1,78 +1,478 @@
-@import 'config';
-@import 'menu';
+.menuBtn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  cursor: pointer;
+}
+.menuBtn .btnLine {
+  width: 28px;
+  height: 3px;
+  margin: 0 0 5px 0;
+  background: #fff;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+.menuBtn.close {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+.menuBtn.close .btnLine:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+  -webkit-transform: rotate(45deg) translate(5px, 5px);
+  -moz-transform: rotate(45deg) translate(5px, 5px);
+  -ms-transform: rotate(45deg) translate(5px, 5px);
+  -o-transform: rotate(45deg) translate(5px, 5px);
+}
+.menuBtn.close .btnLine:nth-child(2) {
+  opacity: 0;
+}
+.menuBtn.close .btnLine:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+  -webkit-transform: rotate(-45deg) translate(7px, -6px);
+  -moz-transform: rotate(-45deg) translate(7px, -6px);
+  -ms-transform: rotate(-45deg) translate(7px, -6px);
+  -o-transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.9;
+  visibility: hidden;
+}
+.menu.show {
+  visibility: visible;
+}
+.menu .menuBranding, .menu .menuNav {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  width: 50%;
+  height: 100vh;
+  overflow: hidden;
+}
+.menu .menuNav {
+  margin: 0;
+  padding: 0;
+  background: #373737;
+  list-style: none;
+  transform: translate3d(0, -100%, 0);
+  -webkit-transform: translate3d(0, -100%, 0);
+  -moz-transform: translate3d(0, -100%, 0);
+  -ms-transform: translate3d(0, -100%, 0);
+  -o-transform: translate3d(0, -100%, 0);
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+.menu .menuNav.show {
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+}
+.menu .menuBranding {
+  background: #444;
+  transform: translate3d(0, 100%, 0);
+  -webkit-transform: translate3d(0, 100%, 0);
+  -moz-transform: translate3d(0, 100%, 0);
+  -ms-transform: translate3d(0, 100%, 0);
+  -o-transform: translate3d(0, 100%, 0);
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+.menu .menuBranding.show {
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+}
+.menu .menuBranding .portrait {
+  width: 250px;
+  height: 250px;
+  background: url("../images/portrait.jpg");
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 3px solid #eece1a;
+}
+.menu .navItem {
+  transform: translate3d(600px, 0, 0);
+  -webkit-transform: translate3d(600px, 0, 0);
+  -moz-transform: translate3d(600px, 0, 0);
+  -ms-transform: translate3d(600px, 0, 0);
+  -o-transform: translate3d(600px, 0, 0);
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+.menu .navItem.show {
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+}
+.menu .navItem.current > a {
+  color: #eece1a;
+}
+.menu .navLink {
+  display: inline-block;
+  position: relative;
+  font-size: 30px;
+  font-weight: 300;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+.menu .navLink:hover {
+  color: #eece1a;
+}
+
+.navItem:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.navItem:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.navItem:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.navItem:nth-child(4) {
+  transition-delay: 0.4s;
+}
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    @include background;
-    background: $primaryColor;
-    color: set-text-color($primaryColor);
-    height: 100%;
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.5;
+  background: #444;
+  color: #fff;
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+body#bg-img {
+  background: url(../images/background.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+}
+body#bg-img:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(68, 68, 68, 0.7);
+  background-size: cover;
+  z-index: -1;
 }
 
-// Headings
-h1,h2,h3{
-    margin: 0;
-    font-weight: 400;
-
-    &.bigHeading{
-        font-size: 6rem;
-    }
-
-    &.smallHeading{
-        margin-bottom: 2rem;
-        padding: 0.2rem 1rem;
-        background: rgba(lighten($primaryColor, 2), 0.5);
-    }
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 400;
+}
+h1.bigHeading, h2.bigHeading, h3.bigHeading {
+  font-size: 6rem;
+}
+h1.smallHeading, h2.smallHeading, h3.smallHeading {
+  margin-bottom: 2rem;
+  padding: 0.2rem 1rem;
+  background: rgba(73, 73, 73, 0.5);
 }
 
-// Links
 a {
-    text-decoration: none;
-    color: #fff;
-    list-style: none;
+  text-decoration: none;
+  color: #fff;
+  list-style: none;
 }
 
-// Header
 header {
-    position: fixed;
-    z-index: 2;
-    width: 100%;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
 }
 
-.secondaryText{
-    color: $secondaryColor;
+.secondaryText {
+  color: #eece1a;
 }
 
-// Main
 main {
-    padding: 4rem;
-    height: 100%;
-
-    .icons{
-        margin-top: 1rem;
-
-        a {
-            padding: 0.4rem;
-
-            &:hover{
-                color: $secondaryColor;
-                @include easeOut();
-            }
-        }
-    }
-
-    &#home{
-        overflow: hidden;
-        h1{
-            margin-top: 20vh;
-        }
-    }
+  padding: 4rem;
+  height: 100%;
 }
+main .icons {
+  margin-top: 1rem;
+}
+main .icons a {
+  padding: 0.4rem;
+}
+main .icons a:hover {
+  color: #eece1a;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+main#home {
+  overflow: hidden;
+}
+main#home h1 {
+  margin-top: 20vh;
+}
+
+.aboutInfo {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: "bioimage bio bio" "job1 job2 job3";
+  grid-template-columns: repeat(3, 1fr);
+}
+.aboutInfo .bioImage {
+  grid-area: bioimage;
+  margin: auto;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 3px solid #eece1a;
+}
+.aboutInfo .bio {
+  grid-area: bio;
+  font-size: 1.5rem;
+}
+.aboutInfo .job1 {
+  grid-area: job1;
+}
+.aboutInfo .job2 {
+  grid-area: job2;
+}
+.aboutInfo .job3 {
+  grid-area: job3;
+}
+
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+.projects img {
+  width: 100%;
+  border: 3px solid #fff;
+}
+.projects img:hover {
+  opacity: 0.5;
+  border-color: #eece1a;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+}
+.boxes div {
+  font-size: 2rem;
+  border: 3px solid #fff;
+  padding: 1.5rem 2.5rem;
+  margin-bottom: 3rem;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+.boxes div:hover {
+  padding: 0.5rem 1.5rem;
+  background: #eece1a;
+  color: #000;
+}
+.boxes div:hover span {
+  color: #000;
+}
+
+.btn, .btn-light, .btn-dark {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+}
+.btn:hover, .btn-light:hover, .btn-dark:hover {
+  background: #eece1a;
+  color: #000;
+}
+
+.btn-dark {
+  background: black;
+  color: #fff;
+}
+
+.btn-light {
+  background: #c4c4c4;
+  color: #333;
+}
+
+#mainFooter {
+  text-align: center;
+  padding: 1rem;
+  background: #2b2b2b;
+  color: #fff;
+  height: 60px;
+}
+
+@media screen and (min-width: 1171px) {
+  .projects {
+    grid-template-columns: repeat(4, ifr);
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .projects {
+    grid-template-columns: repeat(3, ifr);
+  }
+}
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center;
+  }
+  main .bigHeading {
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  ul.menuNav, div.menuBranding {
+    float: none;
+    width: 100%;
+    min-height: 0;
+  }
+  ul.menuNav.show, div.menuBranding.show {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+  }
+
+  .menuNav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -moz-transform: translate3d(-100%, 0, 0);
+    -ms-transform: translate3d(-100%, 0, 0);
+    -o-transform: translate3d(-100%, 0, 0);
+    font-size: 24px;
+  }
+
+  .menuBranding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0);
+    -webkit-transform: translate3d(100%, 0, 0);
+    -moz-transform: translate3d(100%, 0, 0);
+    -ms-transform: translate3d(100%, 0, 0);
+    -o-transform: translate3d(100%, 0, 0);
+  }
+  .menuBranding .portrait {
+    background: url("../images/portrait_small.jpg");
+    height: 150px;
+    width: 150px;
+  }
+
+  .aboutInfo {
+    grid-template-areas: "bioImage" "bio" "job1" "job2" "job3";
+    grid-template-columns: 1fr;
+  }
+  .aboutInfo .bioImage {
+    grid-area: bioImage;
+  }
+  .aboutInfo .bio {
+    grid-area: bio;
+  }
+  .aboutInfo .job1 {
+    grid-area: job1;
+  }
+  .aboutInfo .job2 {
+    grid-area: job2;
+  }
+  .aboutInfo .job3 {
+    grid-area: job3;
+  }
+
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .boxes {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 500px) {
+  main {
+    padding: 2rem;
+  }
+  main #home h1 {
+    margin-top: 10vh;
+  }
+  main .bigHeading {
+    font-size: 5rem;
+    margin-top: 1rem;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .boxes {
+    flex-direction: column;
+  }
+  .boxes .div {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+}/*# sourceMappingURL=style.css.map */
